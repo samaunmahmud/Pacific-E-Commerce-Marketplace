@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<VBox alignment="CENTER" spacing="30" style="-fx-background-color: #f8dcd1;"
+      stylesheets="@style.css"
+      xmlns:fx="http://javafx.com/fxml/1"
+      xmlns="http://javafx.com/javafx/17"
+      fx:controller="UITest1.UITest1.LoginController">
+    <VBox alignment="CENTER" spacing="20" styleClass="square-review-box" maxWidth="400">
+        <Label text="Pacific" styleClass="logo-text" />
+        <Label text="Welcome Back" style="-fx-font-size: 20;" />
+
+        <HBox alignment="CENTER" spacing="15">
+            <ToggleButton fx:id="customerToggle" text="Customer"
+                          selected="true" styleClass="more-btn" />
+            <ToggleButton fx:id="adminToggle" text="Admin"
+                          styleClass="more-btn" />
+        </HBox>
+
+        <TextField promptText="Username" styleClass="search-input" />
+        <PasswordField promptText="Password" styleClass="search-input" />
+
+        <Button text="Login" onAction="#handleLogin"
+                styleClass="submit-btn" prefWidth="200" />
+    </VBox>
+</VBox>

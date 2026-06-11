@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane fx:id="adminFlaggedLayout"
+            fx:controller="UITest1.UITest1.AdminFlaggedController"
+            prefHeight="900.0"
+            prefWidth="1300.0"
+            stylesheets="@style.css"
+            xmlns:fx="http://javafx.com/fxml/1"
+            xmlns="http://javafx.com/javafx/17">
+
+    <top>
+        <fx:include source="SharedTab.fxml" />
+    </top>
+
+    <center>
+        <ScrollPane fitToWidth="true"
+                    styleClass="scroll-pane"
+                    style="-fx-background-color: white; -fx-border-color: transparent;">
+            <content>
+                <VBox spacing="30.0" style="-fx-padding: 40 60;">
+                    <children>
+                        <HBox alignment="CENTER_LEFT" spacing="20">
+                            <children>
+                                <Button onAction="#navigateBack"
+                                        styleClass="back-btn"
+                                        text="←"
+                                        style="-fx-cursor: hand;" />
+                                <VBox spacing="5">
+                                    <children>
+                                        <Label style="-fx-font-size: 28; -fx-font-weight: bold; -fx-font-family: 'serif';"
+                                               text="Moderation Queue" />
+                                        <Label fx:id="queueStatusLabel"
+                                               style="-fx-text-fill: #e74c3c; -fx-font-weight: bold;"
+                                               text="Action required: Reviews flagged for moderation" />
+                                    </children>
+                                </VBox>
+                            </children>
+                        </HBox>
+
+                        <FlowPane fx:id="flaggedReviewsPane"
+                                  hgap="25.0"
+                                  vgap="25.0"
+                                  prefWrapLength="1100.0" />
+                    </children>
+                </VBox>
+            </content>
+        </ScrollPane>
+    </center>
+</BorderPane>

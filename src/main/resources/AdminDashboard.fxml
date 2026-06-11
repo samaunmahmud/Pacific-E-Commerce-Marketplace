@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane prefHeight="900" prefWidth="1300" stylesheets="@style.css"
+            xmlns:fx="http://javafx.com/fxml/1"
+            xmlns="http://javafx.com/javafx/17"
+            fx:controller="UITest1.UITest1.AdminDashboardController">
+
+    <top>
+        <fx:include source="SharedTab.fxml" />
+    </top>
+
+    <center>
+        <ScrollPane fitToWidth="true" styleClass="custom-scroll-pane">
+            <content>
+                <VBox spacing="40" style="-fx-padding: 40 60; -fx-background-color: white;">
+                    <children>
+
+                        <!-- ── SECTION 1: PIE CHART + STATS ── -->
+                        <VBox spacing="20">
+                            <children>
+                                <Label style="-fx-font-size: 28; -fx-font-family: 'serif'; -fx-font-weight: bold;"
+                                       text="Review Distribution Statistics" />
+                                <HBox alignment="CENTER_LEFT" spacing="50"
+                                      style="-fx-padding: 30;" styleClass="square-review-box">
+                                    <children>
+                                        <PieChart fx:id="averageReviewsChart"
+                                                  prefHeight="350" prefWidth="450" />
+                                        <VBox alignment="CENTER_LEFT" spacing="15">
+                                            <children>
+                                                <Label style="-fx-font-size: 20; -fx-font-weight: bold;"
+                                                       text="Summary" />
+                                                <Label fx:id="statsLabel"
+                                                       style="-fx-font-size: 16; -fx-text-fill: #666;"
+                                                       text="Loading stats..." />
+                                                <Separator />
+                                                <Button onAction="#handleViewMore"
+                                                        styleClass="submit-btn"
+                                                        text="See more flagged reviews" />
+                                            </children>
+                                        </VBox>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </VBox>
+
+                        <Separator />
+
+                        <!-- ── SECTION 2: PER-PRODUCT AVERAGE RATINGS ── -->
+                        <VBox spacing="15">
+                            <children>
+                                <Label style="-fx-font-size: 24; -fx-font-family: 'serif'; -fx-font-weight: bold;"
+                                       text="Average Ratings per Product" />
+                                <VBox fx:id="productRatingsBox"
+                                      spacing="5"
+                                      styleClass="square-review-box">
+                                    <children>
+                                        <Label text="Loading product ratings..."
+                                               style="-fx-text-fill: #aaa;" />
+                                    </children>
+                                </VBox>
+                            </children>
+                        </VBox>
+
+                        <Separator />
+
+                        <!-- ── SECTION 3: RECENT FLAGS & REVIEW CARDS ── -->
+                        <VBox spacing="20">
+                            <children>
+                                <HBox alignment="BOTTOM_LEFT">
+                                    <children>
+                                        <Label style="-fx-font-size: 24; -fx-font-family: 'serif';"
+                                               text="Recent Flags &amp; Reviews" />
+                                        <Region HBox.hgrow="ALWAYS" />
+                                        <Button onAction="#handleViewMore"
+                                                style="-fx-background-color: transparent;"
+                                                styleClass="view-all-link"
+                                                text="See more flagged reviews →" />
+                                    </children>
+                                </HBox>
+
+                                <FlowPane fx:id="reviewsFlowPane" hgap="25" vgap="25" />
+                            </children>
+                        </VBox>
+
+                    </children>
+                </VBox>
+            </content>
+        </ScrollPane>
+    </center>
+</BorderPane>

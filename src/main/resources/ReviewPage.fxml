@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+
+<BorderPane fx:id="reviewLayout"
+            fx:controller="UITest1.UITest1.ReviewPageController"
+            stylesheets="@style.css"
+            xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1">
+    <top>
+        <fx:include source="SharedTab.fxml" />
+    </top>
+    <center>
+        <ScrollPane fitToWidth="true"
+                    style="-fx-background-color: white; -fx-border-color: transparent;">
+            <VBox spacing="15.0" style="-fx-padding: 30 100;">
+                <children>
+                    <HBox alignment="CENTER_LEFT">
+                        <Button onAction="#navigateBack" styleClass="three-dots-btn" text="←" />
+                        <Region HBox.hgrow="ALWAYS" />
+                        <HBox alignment="CENTER" spacing="10">
+                            <Label text="Hello, Verified Buyer" style="-fx-font-size: 16;" />
+                            <ImageView fitHeight="40" preserveRatio="true">
+                                <Image url="@avatarCustomerLogin.png" />
+                            </ImageView>
+                        </HBox>
+                    </HBox>
+
+                    <Label text="How was the item?"
+                           style="-fx-font-size: 32; -fx-font-weight: bold;" />
+
+                    <HBox fx:id="starContainer" spacing="5">
+                        <children>
+                            <Button onAction="#handleStarClick" userData="1"
+                                    styleClass="star-button" text="☆" />
+                            <Button onAction="#handleStarClick" userData="2"
+                                    styleClass="star-button" text="☆" />
+                            <Button onAction="#handleStarClick" userData="3"
+                                    styleClass="star-button" text="☆" />
+                            <Button onAction="#handleStarClick" userData="4"
+                                    styleClass="star-button" text="☆" />
+                            <Button onAction="#handleStarClick" userData="5"
+                                    styleClass="star-button" text="☆" />
+                        </children>
+                    </HBox>
+
+                    <Label text="Write a review," style="-fx-font-size: 18;" />
+                    <TextArea fx:id="customerReviewArea" prefHeight="80"
+                              styleClass="rounded-input" wrapText="true" />
+
+                    <Label text="Share a video or photo," style="-fx-font-size: 18;" />
+                    <StackPane onMouseClicked="#handleVideoUpload" prefHeight="120"
+                               styleClass="rounded-input-video" style="-fx-cursor: hand;">
+                        <VBox alignment="CENTER" spacing="5">
+                            <ImageView fitHeight="40" preserveRatio="true" opacity="0.6">
+                                <Image url="@cart.png" />
+                            </ImageView>
+                            <Label fx:id="fileNameLabel" text="Click to upload media"
+                                   style="-fx-text-fill: gray;" />
+                        </VBox>
+                    </StackPane>
+
+                    <Label text="Title your review (required)" style="-fx-font-size: 18;" />
+                    <TextField fx:id="reviewTitleField"
+                               promptText="What's most important to know?"
+                               styleClass="rounded-input" />
+
+                    <Label text="What is your public name?" style="-fx-font-size: 18;" />
+                    <TextField fx:id="publicNameField" styleClass="rounded-input" />
+
+                    <Label text="How was the Product?" style="-fx-font-size: 18;" />
+                    <!-- FIX: fx:id added so it matches the @FXML field in ReviewPageController -->
+                    <TextField fx:id="helpfulRatingField"
+                               promptText="Rate it from 1 to 10"
+                               styleClass="rounded-input" />
+
+                    <StackPane>
+                        <Button text="Submit" onAction="#handleSubmit"
+                                styleClass="submit-btn" prefWidth="250" />
+                    </StackPane>
+                </children>
+            </VBox>
+        </ScrollPane>
+    </center>
+</BorderPane>

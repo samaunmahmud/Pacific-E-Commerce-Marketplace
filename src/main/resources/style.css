@@ -1,0 +1,557 @@
+/* =========================================
+   1. CORE & LAYOUT
+   ========================================= */
+.root {
+    -fx-font-family: "Inter", "Segoe UI", sans-serif;
+    -fx-background-color: #ffffff;
+}
+
+/* =========================================
+   2. SHARED TAB — HEADER
+   ========================================= */
+.header-box {
+    -fx-background-color: #f9dcd1;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.08), 6, 0, 0, 3);
+}
+
+.logo-text {
+    -fx-font-family: "Georgia", serif;
+    -fx-font-size: 34px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #860752;
+    -fx-cursor: hand;
+}
+
+.logo-text:hover {
+    -fx-text-fill: #631e4d;
+    -fx-scale-x: 1.08;
+    -fx-scale-y: 1.08;
+}
+
+/* =========================================
+   3. SEARCH BAR — SHARED TAB (Pill shaped)
+   ========================================= */
+.search-container {
+    -fx-background-color: white;
+    -fx-background-radius: 1000;
+    -fx-border-color: #860752;
+    -fx-border-radius: 1000;
+    -fx-border-width: 2;
+    -fx-effect: dropshadow(three-pass-box, rgba(134,7,82,0.15), 8, 0, 0, 2);
+}
+
+.search-container:hover {
+    -fx-border-width: 2.5;
+    -fx-effect: dropshadow(three-pass-box, rgba(134,7,82,0.3), 12, 0, 0, 0);
+}
+
+.transparent-search {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-prompt-text-fill: #999;
+    -fx-font-size: 13px;
+}
+
+.search-submit-btn {
+    -fx-background-color: #860752;
+    -fx-text-fill: white;
+    -fx-background-radius: 0 1000 1000 0;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+    -fx-padding: 0 20;
+    -fx-cursor: hand;
+    /* REMOVED -fx-pref-height — height locked in FXML with min/pref/maxHeight=38 */
+}
+
+.search-submit-btn:hover {
+    -fx-background-color: #631e4d;
+    -fx-scale-x: 1.03;
+    -fx-scale-y: 1.03;
+}
+
+/* =========================================
+   4. NAVIGATION BAR
+   ========================================= */
+.nav-bar {
+    -fx-background-color: #860752;
+}
+
+.nav-link {
+    -fx-text-fill: white;
+    -fx-font-size: 13px;
+    -fx-cursor: hand;
+    -fx-padding: 5 10;
+}
+
+.nav-link-bold {
+    -fx-text-fill: white;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-padding: 5 10;
+}
+
+.nav-link:hover {
+    -fx-scale-x: 1.12;
+    -fx-scale-y: 1.12;
+    -fx-text-fill: #f9dcd1;
+    -fx-underline: true;
+}
+
+.nav-link-bold:hover {
+    -fx-scale-x: 1.12;
+    -fx-scale-y: 1.12;
+    -fx-text-fill: #f9dcd1;
+    -fx-underline: true;
+}
+
+/* =========================================
+   5. ACTION ITEMS — Sign in / Logout / Cart
+   ========================================= */
+.action-item {
+    -fx-cursor: hand;
+    -fx-padding: 5 10;
+}
+
+.action-item:hover {
+    -fx-scale-x: 1.08;
+    -fx-scale-y: 1.08;
+}
+
+.action-item:hover .action-label {
+    -fx-text-fill: #860752;
+}
+
+.action-label {
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333;
+}
+
+.logout-item:hover Label {
+    -fx-text-fill: #631e4d;
+}
+
+/* =========================================
+   6. LOGIN PAGES
+   ========================================= */
+.graphic-container {
+    -fx-background-color: #f9dcd1;
+}
+
+.login-header {
+    -fx-font-size: 32px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+}
+
+.modern-input {
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-border-color: #dddddd;
+    -fx-padding: 10;
+    -fx-font-size: 14px;
+}
+
+.modern-input:focused {
+    -fx-border-color: #860752;
+    -fx-border-width: 1.5;
+}
+
+.login-button {
+    -fx-background-color: #631e4d;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 10;
+    -fx-cursor: hand;
+    -fx-font-size: 16px;
+}
+
+.login-button:hover {
+    -fx-background-color: #860752;
+    -fx-scale-x: 1.03;
+    -fx-scale-y: 1.03;
+}
+
+/* =========================================
+   7. BUTTONS — Submit, Back, Utility
+   ========================================= */
+.submit-btn {
+    -fx-background-color: #860752;
+    -fx-text-fill: white;
+    -fx-background-radius: 20;
+    -fx-padding: 10 25;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+}
+
+.submit-btn:hover {
+    -fx-background-color: #631e4d;
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}
+
+.back-btn {
+    -fx-background-color: #f1f1f1;
+    -fx-background-radius: 50;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-padding: 5 12;
+}
+
+.back-btn:hover {
+    -fx-background-color: #860752;
+    -fx-text-fill: white;
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+}
+
+.three-dots-btn {
+    -fx-background-color: transparent;
+    -fx-font-size: 20px;
+    -fx-text-fill: #888;
+    -fx-cursor: hand;
+}
+
+.view-all-link {
+    -fx-text-fill: #860752;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-underline: true;
+}
+
+/* =========================================
+   8. ADMIN DASHBOARD — Cards & Boxes
+   ========================================= */
+.square-review-box {
+    -fx-background-color: white;
+    -fx-background-radius: 15;
+    -fx-padding: 20;
+    -fx-border-color: #f1f1f1;
+    -fx-border-width: 1;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.05), 10, 0, 0, 5);
+}
+
+.square-review-box:hover {
+    -fx-border-color: #860752;
+}
+
+.mini-icon-btn {
+    -fx-background-color: #f1f1f1;
+    -fx-background-radius: 50;
+    -fx-font-size: 14px;
+    -fx-cursor: hand;
+    -fx-padding: 4 8;
+    -fx-min-width: 30;
+}
+
+.mini-icon-btn:hover {
+    -fx-background-color: #e0e0e0;
+    -fx-scale-x: 1.2;
+    -fx-scale-y: 1.2;
+}
+
+.delete-btn {
+    -fx-text-fill: #e74c3c;
+}
+
+.delete-btn:hover {
+    -fx-background-color: #fdecea;
+}
+
+/* =========================================
+   9. PIE CHART
+   ========================================= */
+.chart-pie-label {
+    -fx-fill: #444;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+}
+
+.chart-legend {
+    -fx-background-color: transparent;
+    -fx-alignment: CENTER;
+}
+
+/* =========================================
+   10. SCROLLBAR
+   ========================================= */
+.custom-scroll-pane .scroll-bar:vertical {
+    -fx-background-color: transparent;
+    -fx-pref-width: 8;
+}
+
+.custom-scroll-pane .scroll-bar:vertical .thumb {
+    -fx-background-color: #dcdde1;
+    -fx-background-radius: 10;
+}
+
+.custom-scroll-pane .scroll-bar:vertical .thumb:hover {
+    -fx-background-color: #860752;
+}
+
+/* =========================================
+   11. PRODUCT CARDS — Customer Dashboard
+   ========================================= */
+.product-card {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 15;
+    -fx-padding: 20;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.08), 12, 0, 0, 4);
+}
+
+.product-card:hover {
+    -fx-scale-x: 1.03;
+    -fx-scale-y: 1.03;
+    -fx-effect: dropshadow(three-pass-box, rgba(134, 7, 82, 0.2), 15, 0, 0, 8);
+    -fx-translate-y: -5;
+}
+
+.product-title-text {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+}
+
+.product-price {
+    -fx-font-size: 16px;
+    -fx-text-fill: #860752;
+    -fx-font-weight: bold;
+}
+
+.image-container {
+    -fx-background-color: #fcfcfc;
+    -fx-background-radius: 10;
+    -fx-padding: 10;
+}
+
+/* =========================================
+   12. SEARCH BAR — Customer Dashboard (Red)
+   ========================================= */
+.customer-search-box {
+    -fx-background-color: white;
+    -fx-background-radius: 1000;
+    -fx-border-color: #860752;
+    -fx-border-radius: 1000;
+    -fx-border-width: 1.5;
+}
+
+.customer-search-box:hover {
+    -fx-border-width: 2;
+    -fx-effect: dropshadow(three-pass-box, rgba(134, 7, 82, 0.25), 10, 0, 0, 0);
+}
+
+.customer-search-icon {
+    -fx-font-size: 16px;
+    -fx-text-fill: #860752;
+}
+
+.customer-search-field {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-prompt-text-fill: #860752;
+    -fx-text-fill: #333;
+    -fx-font-size: 14px;
+}
+
+.customer-search-field:focused {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+/* =========================================
+   13. SORT COMBOBOX — Red + Fully Curved
+   ========================================= */
+.combo-box {
+    -fx-background-color: #860752;
+    -fx-background-radius: 1000;
+    -fx-border-radius: 1000;
+    -fx-border-color: #860752;
+    -fx-border-width: 1.5;
+    -fx-padding: 0 15;
+    -fx-cursor: hand;
+}
+
+.combo-box .list-cell {
+    -fx-text-fill: white;
+    -fx-background-color: transparent;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-padding: 0 5;
+}
+
+.combo-box:hover {
+    -fx-background-color: #631e4d;
+    -fx-border-color: #631e4d;
+    -fx-scale-x: 1.03;
+    -fx-scale-y: 1.03;
+}
+
+.combo-box .arrow-button {
+    -fx-background-color: transparent;
+    -fx-padding: 0 8 0 0;
+}
+
+.combo-box .arrow {
+    -fx-background-color: white;
+}
+
+.combo-box-popup .list-view {
+    -fx-background-color: white;
+    -fx-background-radius: 15;
+    -fx-border-radius: 15;
+    -fx-border-color: #860752;
+    -fx-border-width: 1.5;
+    -fx-effect: dropshadow(three-pass-box, rgba(134, 7, 82, 0.2), 10, 0, 0, 5);
+}
+
+.combo-box-popup .list-view .list-cell {
+    -fx-background-color: white;
+    -fx-text-fill: #333;
+    -fx-font-size: 13px;
+    -fx-padding: 8 15;
+}
+
+.combo-box-popup .list-view .list-cell:hover {
+    -fx-background-color: #f9dcd1;
+    -fx-text-fill: #860752;
+    -fx-font-weight: bold;
+}
+
+.combo-box-popup .list-view .list-cell:selected {
+    -fx-background-color: #860752;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+/* =========================================
+   14. REVIEW CARDS
+   ========================================= */
+.review-card {
+    -fx-background-color: white;
+    -fx-background-radius: 15;
+    -fx-padding: 20;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.05), 10, 0, 0, 5);
+    -fx-cursor: hand;
+}
+
+.review-card:hover {
+    -fx-effect: dropshadow(three-pass-box, rgba(134, 7, 82, 0.15), 15, 0, 0, 8);
+    -fx-translate-y: -3;
+    -fx-border-color: #860752;
+    -fx-border-radius: 15;
+}
+
+.star-label {
+    -fx-font-size: 18px;
+    -fx-text-fill: #e5ac62;
+}
+
+.reviewer-name {
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-text-fill: #333;
+}
+
+.review-date {
+    -fx-font-size: 12px;
+    -fx-text-fill: #999;
+}
+
+.avatar-circle {
+    -fx-background-color: #f1e0ea;
+    -fx-background-radius: 50;
+    -fx-min-width: 40;
+    -fx-min-height: 40;
+    -fx-max-width: 40;
+    -fx-max-height: 40;
+}
+
+/* =========================================
+   15. REVIEW PAGE — Star Buttons & Inputs
+   ========================================= */
+.star-button {
+    -fx-background-color: transparent;
+    -fx-font-size: 28px;
+    -fx-text-fill: #444444;
+    -fx-cursor: hand;
+    -fx-padding: 0;
+}
+
+.star-button:hover {
+    -fx-text-fill: #860752;
+    -fx-scale-x: 1.2;
+    -fx-scale-y: 1.2;
+}
+
+.rounded-input {
+    -fx-background-color: #f9f9f9;
+    -fx-background-radius: 10;
+    -fx-border-color: #dddddd;
+    -fx-border-radius: 10;
+    -fx-border-width: 1;
+    -fx-padding: 10;
+    -fx-font-size: 14px;
+}
+
+.rounded-input:focused {
+    -fx-border-color: #860752;
+    -fx-border-width: 1.5;
+    -fx-background-color: white;
+}
+
+.rounded-input-video {
+    -fx-background-color: #f9f9f9;
+    -fx-border-color: #dddddd;
+    -fx-border-radius: 15;
+    -fx-background-radius: 15;
+    -fx-border-style: dashed;
+}
+
+/* =========================================
+   16. HELPFUL / UNHELPFUL VOTING
+   ========================================= */
+.helpful-btn {
+    -fx-background-color: transparent;
+    -fx-font-size: 16px;
+    -fx-cursor: hand;
+    -fx-padding: 2 6;
+    -fx-background-radius: 8;
+    -fx-border-color: #e0e0e0;
+    -fx-border-radius: 8;
+    -fx-border-width: 1;
+}
+
+.helpful-btn:hover {
+    -fx-background-color: #f9dcd1;
+    -fx-border-color: #860752;
+    -fx-scale-x: 1.2;
+    -fx-scale-y: 1.2;
+}
+
+.helpful-btn:disabled {
+    -fx-opacity: 0.4;
+    -fx-cursor: default;
+}
+
+.vote-count-label {
+    -fx-font-size: 12px;
+    -fx-text-fill: #888;
+    -fx-min-width: 18;
+}
+
+/* =========================================
+   17. PRODUCT AVERAGE RATINGS — Progress Bar
+   ========================================= */
+.progress-bar > .track {
+    -fx-background-color: #f1f1f1;
+    -fx-background-radius: 5;
+}
+
+.progress-bar > .bar {
+    -fx-background-color: #860752;
+    -fx-background-radius: 5;
+    -fx-background-insets: 0;
+}

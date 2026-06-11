@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<!-- FIX: File must be named AdminEditReview.fxml to match App.setRoot("AdminEditReview") -->
+<BorderPane fx:controller="UITest1.UITest1.AdminEditController"
+            stylesheets="@style.css"
+            xmlns:fx="http://javafx.com/fxml/1"
+            xmlns="http://javafx.com/javafx/17">
+    <top>
+        <fx:include source="SharedTab.fxml" />
+    </top>
+    <center>
+        <VBox spacing="25.0" style="-fx-padding: 40 100;">
+            <HBox alignment="CENTER_LEFT" spacing="20">
+                <Button onAction="#navigateBack" styleClass="three-dots-btn" text="←" />
+                <Label text="Edit Flagged Review"
+                       style="-fx-font-size: 28; -fx-text-fill: #631e4d; -fx-font-weight: bold;" />
+            </HBox>
+            <VBox spacing="15" styleClass="review-card">
+                <Label text="Review Title"   style="-fx-font-weight: bold;" />
+                <TextField fx:id="editTitleField" styleClass="rounded-input" />
+                <Label text="Review Content" style="-fx-font-weight: bold;" />
+                <TextArea fx:id="editContentArea" prefHeight="150"
+                          styleClass="rounded-input" wrapText="true" />
+                <HBox spacing="20" alignment="CENTER_RIGHT">
+                    <Button text="Reject Flag" onAction="#navigateBack"
+                            style="-fx-background-color: #f1f2f6; -fx-text-fill: #631e4d;
+                                   -fx-background-radius: 20; -fx-padding: 10 25;" />
+                    <!-- FIX: onAction was #handleSave — now matches AdminEditController.handleSave() -->
+                    <Button text="Save Changes" onAction="#handleSave" styleClass="submit-btn" />
+                </HBox>
+            </VBox>
+        </VBox>
+    </center>
+</BorderPane>

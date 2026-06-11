@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<BorderPane prefHeight="900" prefWidth="1300" stylesheets="@style.css"
+            xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="UITest1.UITest1.ReviewEditorController">
+
+    <top>
+        <fx:include source="SharedTab.fxml" />
+    </top>
+
+    <center>
+        <VBox spacing="30" alignment="TOP_CENTER" style="-fx-padding: 80 300;">
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Button text="←" onAction="#navigateBack" styleClass="three-dots-btn" />
+                <Label text="Edit Flagged Review"
+                       style="-fx-font-size: 28; -fx-font-weight: bold;" />
+            </HBox>
+
+            <VBox spacing="20" styleClass="review-card">
+                <Label text="Reviewer Comment" style="-fx-font-weight: bold;" />
+                <TextArea fx:id="commentArea" prefHeight="300"
+                          styleClass="rounded-input" wrapText="true" />
+                <HBox spacing="20" alignment="CENTER_RIGHT">
+                    <Button text="Save &amp; Sanitize" onAction="#saveChanges"
+                            styleClass="submit-btn" prefWidth="250" />
+                </HBox>
+            </VBox>
+        </VBox>
+    </center>
+</BorderPane>

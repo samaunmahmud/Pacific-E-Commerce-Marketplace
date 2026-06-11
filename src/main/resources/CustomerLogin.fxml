@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<HBox prefHeight="900.0" prefWidth="1440.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UITest1.UITest1.CustomerLoginController">
+    <children>
+        <VBox alignment="CENTER" styleClass="graphic-container" HBox.hgrow="ALWAYS">
+            <children>
+                <StackPane maxWidth="500.0">
+                    <children>
+                        <Rectangle arcHeight="40.0" arcWidth="40.0" fill="WHITE" height="600.0" stroke="#dddddd" width="500.0" />
+                        <VBox alignment="CENTER" spacing="30.0">
+                            <children>
+                                <ImageView fitHeight="220.0" fitWidth="220.0" pickOnBounds="true" preserveRatio="true">
+                                    <image><Image url="@avatarCustomerLogin.png" /></image>
+                                </ImageView>
+                                <Label text="WELCOME TO PACIFIC" textAlignment="CENTER" textFill="#631e4d" wrapText="true">
+                                    <font><Font name="System Bold" size="48.0" /></font>
+                                </Label>
+                            </children>
+                        </VBox>
+                    </children>
+                </StackPane>
+            </children>
+        </VBox>
+
+        <VBox alignment="CENTER" spacing="25.0" style="-fx-background-color: white; -fx-padding: 60;" HBox.hgrow="ALWAYS">
+            <children>
+                <Label styleClass="login-header" text="Customer Login" />
+                <VBox alignment="CENTER" maxWidth="400.0" spacing="15.0">
+                    <children>
+                        <TextField fx:id="userField" prefHeight="45.0" promptText="Email" styleClass="modern-input" />
+                        <PasswordField fx:id="passField" prefHeight="45.0" promptText="Password" styleClass="modern-input" />
+                        <Button onAction="#handleCustomerLogin" prefHeight="55.0" prefWidth="400.0" styleClass="login-button" text="LOGIN" />
+                        <Hyperlink onAction="#switchToAdmin" text="Are you an Admin? Login here" textFill="#631e4d" />
+                    </children>
+                </VBox>
+            </children>
+         <effect>
+            <DropShadow />
+         </effect>
+        </VBox>
+    </children>
+</HBox>

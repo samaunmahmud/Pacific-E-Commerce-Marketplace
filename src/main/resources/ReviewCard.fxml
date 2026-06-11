@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox fx:id="cardContainer"
+      prefWidth="285.0"
+      spacing="12.0"
+      styleClass="square-review-box"
+      stylesheets="@style.css"
+      xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="UITest1.UITest1.ReviewCardController">
+
+    <children>
+        <!-- Top row: edit / delete buttons -->
+        <HBox alignment="TOP_RIGHT" spacing="8.0">
+            <children>
+                <Button fx:id="editButton"
+                        onAction="#onEdit"
+                        styleClass="mini-icon-btn"
+                        text="✎" />
+                <!-- FIX: Use styleClass attribute directly instead of <String> child elements -->
+                <Button fx:id="deleteButton"
+                        onAction="#onDelete"
+                        styleClass="mini-icon-btn delete-btn"
+                        text="🗑" />
+            </children>
+        </HBox>
+
+        <!-- Star rating -->
+        <Label fx:id="starsLabel" styleClass="star-label" text="★★★★★" />
+
+        <!-- Comment text -->
+        <Label fx:id="commentLabel"
+               text="Review text will appear here..."
+               wrapText="true"
+               style="-fx-text-fill: #666; -fx-min-height: 40;" />
+
+        <!-- Avatar + name + date -->
+        <HBox alignment="CENTER_LEFT" spacing="10.0">
+            <children>
+                <StackPane styleClass="avatar-circle">
+                    <children>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" preserveRatio="true">
+                            <image>
+                                <Image url="@avatarCustomerLogin.png" />
+                            </image>
+                        </ImageView>
+                    </children>
+                </StackPane>
+                <VBox>
+                    <children>
+                        <Label fx:id="nameLabel" styleClass="reviewer-name" text="Reviewer Name" />
+                        <Label fx:id="dateLabel" styleClass="review-date"   text="Just now" />
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+
+        <Separator />
+
+        <!-- Helpful / Unhelpful voting row -->
+        <HBox alignment="CENTER_LEFT" spacing="10.0">
+            <children>
+                <Label text="Was this helpful?"
+                       style="-fx-font-size: 12px; -fx-text-fill: #888;" />
+                <Region HBox.hgrow="ALWAYS" />
+                <Button fx:id="helpfulButton"
+                        onAction="#onHelpful"
+                        styleClass="helpful-btn"
+                        text="👍" />
+                <Label fx:id="helpfulCountLabel"
+                       text="0"
+                       styleClass="vote-count-label" />
+                <Button fx:id="unhelpfulButton"
+                        onAction="#onUnhelpful"
+                        styleClass="helpful-btn"
+                        text="👎" />
+                <Label fx:id="unhelpfulCountLabel"
+                       text="0"
+                       styleClass="vote-count-label" />
+            </children>
+        </HBox>
+    </children>
+
+    <padding>
+        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+    </padding>
+</VBox>
